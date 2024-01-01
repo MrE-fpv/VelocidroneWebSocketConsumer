@@ -1,0 +1,28 @@
+const { app, BrowserWindow, ipcMain } = require('electron')
+const path = require('node:path')
+
+const createWindow = () => {
+  const win = new BrowserWindow({
+    width: 640,
+    height: 480,
+    webPreferences: {
+        preload: path.join(__dirname, 'preload.js')
+      }
+  })
+
+  win.loadFile('index.html')
+}
+
+app.whenReady().then(() => {
+    ipcMain.handle('ping', () => 'pong')
+    createWindow()
+  })
+  
+
+// app.on('window-all-closed', () => {
+//     if (process.platform !== 'darwin') app.quit()
+//     console.log('All windows closed - called app.quit')
+//   })
+
+  
+//console.log('main.js fnished')

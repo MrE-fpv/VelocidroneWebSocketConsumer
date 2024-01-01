@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" href="./css/app.css"></link>
+    <title>Hello from Electron renderer!</title>
+  </head>
+<body>
+    <div class="titlebar">
+        <div class="topnav">
+            <a class="active" href="index.html">Home</a>
+            <a class="right" href="settings.html">Settings</a> 
+        </div> 
+    </div>
+    <div class="canvas">
+    <h1>Velows Proxy UI</h1>
+    <p>Velocidrone Status:<button class="red">Unconnected</button></p>
+    </div>
+    <p>👋</p>
+    <p id="info"></p>
+<script src="./renderer.js"></script>
+</html>

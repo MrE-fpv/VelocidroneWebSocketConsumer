@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velows Proxy UI - Settings</title>
+    <link rel="stylesheet" href="./css/app.css"></link>
+    <script>
+        console.log(__dirname);
+        console.log(process.env);
+        console.log("test console log"); 
+    </script>
+</head>
+<body>
+    <div class="titlebar">
+        <div class="topnav">
+            <a href="index.html">Home</a>
+            <a class="right" href="settings.html">Settings</a> 
+        </div> 
+    </div>
+    <div class="canvas">
+    <h1>Velows Proxy Settings</h1>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Local IP: <input></input><button>Submit</button></p>
+        <p>&nbsp;API Server: <input></input><button>Submit</button></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;API Key: <input></input><button>Submit</button></p>
+    </div> 
+</body>
+</html>
