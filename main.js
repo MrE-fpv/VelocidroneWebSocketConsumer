@@ -2,7 +2,6 @@ const { app, BrowserWindow, Tray, Menu, webContents, ipcMain } = require('electr
 const path = require('node:path')
 
 app.whenReady().then(() => {
-//const createWindow = () => {
     const myWindow = new BrowserWindow({
     //frame: false,
     autoHideMenuBar: true,
@@ -16,10 +15,9 @@ app.whenReady().then(() => {
       }
     })    
   myWindow.loadFile('index.html')
-//}
+
 
 let tray = null
-//app.whenReady().then(() => {
 
   // Window management
   tray = new Tray('./Media/logo.png')
