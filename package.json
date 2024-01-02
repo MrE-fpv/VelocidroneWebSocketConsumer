@@ -1,7 +1,7 @@
 {
   "name": "electrontutorial-1",
   "version": "1.0.0",
-  "description": "TEst build of Electron app",
+  "description": "Test build of Electron app",
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
