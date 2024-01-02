@@ -2,17 +2,11 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
     <link rel="stylesheet" href="./css/app.css"></link>
     <title>Velows UI</title>
-  </head>
+    </head>
 <body>
     <div class="titlebar">
         <div class="topnav">
@@ -24,5 +18,9 @@
     <div class="canvas">
     <h1>Velows Proxy Log</h1>
     <p id="info"></p>
+    </div>
+    <script>alert("ok")
+      document.getElementById("localIp").value="127.0.0.1" </script>
+</body>
 <script src="./renderer.js"></script>
 </html>

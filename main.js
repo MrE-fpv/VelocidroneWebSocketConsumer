@@ -10,7 +10,7 @@ app.whenReady().then(() => {
     height: 400,
     icon:'./Media/logo.png',
     webPreferences: {
-        contextIsolation: false,
+        contextIsolation: true,
         nodeIntegration: true,
         preload: path.join(__dirname, 'preload.js')
       }

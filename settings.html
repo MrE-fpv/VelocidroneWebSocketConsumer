@@ -13,24 +13,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Velows Proxy UI - Settings</title>
     <link rel="stylesheet" href="./css/app.css"></link>
-    <script>
-        console.log(__dirname);
-        console.log(process.env);
-        console.log("test console log"); 
-    </script>
+
 </head>
 <body>
     <div class="titlebar">
         <div class="topnav">
             <a href="index.html">Home</a>
+            <a class="right" href="log.html">Log</a>
             <a class="right" href="settings.html">Settings</a> 
         </div> 
     </div>
     <div class="canvas">
     <h1>Velows Proxy Settings</h1>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Local IP: <input></input><button>Update</button></p>
-        <p>&nbsp;API Server: <input></input><button>Update</button></p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;API Key: <input></input><button>Update</button></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Local IP: <input id="localIp"></input><button>Update</button></p>
+        <p>&nbsp;API Server: <input id="apiServer"></input><button>Update</button></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;API Key: <input id="apiKey"></input><button>Update</button></p>
     </div> 
+    <script src="./settings.js"></script>
 </body>
 </html>
