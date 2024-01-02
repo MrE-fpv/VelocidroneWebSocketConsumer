@@ -1,7 +1,12 @@
-import VelocidroneClient from "./VelocidroneClient.js";
-import { readFile } from 'fs/promises';
+exports = async() => { 
 
-const settingsJson = (await readFile("./settings.json")).toString();
+// import VelocidroneClient from "./VelocidroneClient.js";
+// import { readFile } from 'fs/promises';
+const VelocidroneClient = require("./VelocidroneClient.js");
+const fs = require("fs/promises");
+
+
+const settingsJson = (await fs.readFile("./settings.json")).toString();
 const settings = settingsJson != null && settingsJson.length > 0 ? JSON.parse(settingsJson) : null;
 
 const RACEDATAKEYNAME = 'racedata';
@@ -145,3 +150,4 @@ await VelocidroneClient.initialise("settings.json", message);
 // 		await message(dataRows[row].toString());
 // 	}
 // }
+}
