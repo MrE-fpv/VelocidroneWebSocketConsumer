@@ -132,3 +132,5 @@ dist
 # Other excludes
 forge.config.js
 settings.json
+credentials.json
+token.json
