@@ -9,3 +9,11 @@
     document.getElementById("apiKey").value = settings.apiKey
 }));
 
+// function myFunction() {
+//     var x = document.getElementById("apiKey").value
+//     if (x.type === "password") {
+//       x.type = "text";
+//     } else {
+//       x.type = "password";
+//     }
+//   } 

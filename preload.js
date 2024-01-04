@@ -9,7 +9,6 @@ contextBridge.exposeInMainWorld('versions', {
 })
 
 contextBridge.exposeInMainWorld('electronApi', {
-  node: () => process.versions.node,
+  runClient: () => ipcRenderer.invoke('run-client')
   
-  // we can also expose variables, not just functions
 })

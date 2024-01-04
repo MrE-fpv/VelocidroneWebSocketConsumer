@@ -2,55 +2,63 @@ const { app, BrowserWindow, Tray, Menu, webContents, ipcMain } = require('electr
 const path = require('node:path')
 
 app.whenReady().then(() => {
-    const myWindow = new BrowserWindow({
+  const myWindow = new BrowserWindow({
     //frame: false,
     autoHideMenuBar: true,
     width: 640,
     height: 400,
-    icon:'./Media/logo.png',
+    icon: './Media/logo.png',
     webPreferences: {
-        contextIsolation: true,
-        nodeIntegration: true,
-        preload: path.join(__dirname, 'preload.js')
-      }
-    })    
+      contextIsolation: true,
+      nodeIntegration: true,
+      preload: path.join(__dirname, 'preload.js')
+    }
+  })
   myWindow.loadFile('index.html')
+  myWindow.webContents.openDevTools();
 
 
-let tray = null
-
+  let tray = null
   // Window management
   tray = new Tray('./Media/logo.png')
-  
+
   const contextMenu = Menu.buildFromTemplate([
-    { label: 'Minimize to tray', type: 'normal', click: function(){ myWindow.minimize(); }},
-    { label: 'Restore', type: 'normal', click: function(){ myWindow.show(); }},
+    { label: 'Minimize to tray', type: 'normal', click: function () { myWindow.minimize(); } },
+    { label: 'Restore', type: 'normal', click: function () { myWindow.show(); } },
     { label: 'Exit', type: 'normal', click: handleQuit },
   ])
   tray.setToolTip('Velows Proxy')
   tray.setContextMenu(contextMenu)
   tray.addListener("click", () => myWindow.show());
-  
+
 
   // minimize to tray
-  myWindow.on('minimize',function(event){
-  event.preventDefault();
-  myWindow.hide();
+  myWindow.on('minimize', function (event) {
+    event.preventDefault();
+    myWindow.hide();
   });
-  
+
   ipcMain.handle('ping', () => 'pong')
   //createWindow()    
-  })
- 
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') app.quit()
-    console.log('All windows closed - called app.quit')
-  })
+})
 
-  // process the quit call
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') app.quit()
+  console.log('All windows closed - called app.quit')
+})
+
+// process the quit call
 function handleQuit() {
   if (process.platform !== "bbc micro") {
-      app.quit();
+    app.quit();
   }
 }
+
+ipcMain.handle('run-client', async (event) =>{
+  event.preventDefault();
+  const client = require('./proxy.js');
+  await client();
+});
+
+
 //console.log('main.js fnished')

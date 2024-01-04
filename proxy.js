@@ -1,5 +1,5 @@
-exports = async() => { 
-
+module.exports = async() => { 
+	
 // import VelocidroneClient from "./VelocidroneClient.js";
 // import { readFile } from 'fs/promises';
 const VelocidroneClient = require("./VelocidroneClient.js");

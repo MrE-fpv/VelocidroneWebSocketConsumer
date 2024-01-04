@@ -1,15 +1,18 @@
 'use strict';
 
-import { readFile } from 'fs/promises';
-import WebSocket from 'ws';
-import os from 'os';
+const fs = require("fs/promises");
+//import { readFile } from 'fs/promises';
+const WebSocket = require("ws");
+//import WebSocket from 'ws';
+const os = require("os");
+//import os from 'os';
 
 var VelocidroneClient = {
     ws: {},
     settings: {},
 
     initialise: async (settingsPath, messageCallback, openCallback, closeCallback, errorCallback) => {
-        VelocidroneClient.settings = JSON.parse((await readFile(settingsPath)).toString());
+        //VelocidroneClient.settings = JSON.parse((await readFile(settingsPath)).toString());
         let ip = VelocidroneClient.settings.localIP;
         if(ip == null) {
             ip = VelocidroneClient.getLocalIpAddress();
@@ -65,4 +68,5 @@ var VelocidroneClient = {
       }
 }
 
-export default VelocidroneClient;
+//export default VelocidroneClient;
+module.exports = VelocidroneClient;
